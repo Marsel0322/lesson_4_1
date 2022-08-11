@@ -4,9 +4,9 @@ public class Main {
     public static int bossHealth = 700;
     public static int bossDamage = 50;
     public static String bossDefence;
-    public static int[] heroesHealth = {280, 270, 250, 200, 290, 240, 230};
-    public static int[] heroesDamage = {10, 15, 20, 0, 10, 15, 14};
-    public static String[] heroesAttackType = {"Physical", "Magical", "Kinetic", "Medick", "Thor", "lucky", "Berserk"};
+    public static int[] heroesHealth = {280, 270, 250, 200, 290, 240, 230, 310};
+    public static int[] heroesDamage = {10, 15, 20, 0, 10, 15, 14, 5};
+    public static String[] heroesAttackType = {"Physical", "Magical", "Kinetic", "Medick", "Thor", "lucky", "Berserk", "Golem"};
     public static int roundNumber = 0;
 
     public static void main(String[] args) {
@@ -26,6 +26,7 @@ public class Main {
         thor();
         lucky();
         Berserk();
+        Golem();
     }
     public static void Medik() {
         Random random = new Random();
@@ -87,8 +88,11 @@ public static void Berserk() {
 
 }
 public static void Golem() {
-    for (int i = 0; i < ; i++) {
-        
+    for (int i = 0; i < heroesHealth.length ; i++) {
+        if (heroesHealth[7] > 0 && heroesHealth[i] > 0 && heroesHealth[7] != heroesHealth[i]){
+            heroesHealth[i] += bossDamage / 5;
+            heroesHealth[7] -= bossDamage / 5;
+        }
     }
 }
     public static void chooseBossDefence() {
